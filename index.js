@@ -35,7 +35,7 @@ geoToggle.addEventListener('click', () => {
 
 
 function success(position) {
-    info.textContent += position.coords.latitude + ", " + position.coords.longitude
+    info.textContent += position.coords.latitude + ", " + position.coords.longitude + "\n"
 } 
 function error() {
     alert('Sorry, no position available.')
