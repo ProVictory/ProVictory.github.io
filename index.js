@@ -43,7 +43,7 @@ function success(position) {
     let coords = position.coords
     info.innerHTML += coords.latitude + ", " + coords.longitude + "<br>"
     if (oldCoords) distance += calcCrow(coords.latitude, coords.longitude, oldCoords.latitude, oldCoords.longitude)
-    distEl.textContent = Math.round((distance + Number.EPSILON) * 100) / 100  + ' km'
+    distEl.textContent = Math.round((distance + Number.EPSILON) * 1000) / 1000  + ' km'
     oldCoords = position.coords
 } 
 function error() {
