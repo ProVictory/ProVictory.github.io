@@ -43,7 +43,7 @@ function success(position) {
     let coords = position.coords
     info.innerHTML += coords.latitude + ", " + coords.longitude + "<br>"
     if (oldCoords) distance += calcCrow(coords.latitude, coords.longitude, oldCoords.latitude, oldCoords.longitude)
-    distEl.textContent = distance + ' km'
+    distEl.textContent = Math.round((distance + Number.EPSILON) * 100) / 100  + ' km'
     oldCoords = position.coords
 } 
 function error() {
@@ -55,7 +55,7 @@ const options = {
     timeout: 10000
 }
 
-Math.round((num + Number.EPSILON) * 100) / 100
+
 
 
 //This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
