@@ -16,4 +16,32 @@ if ('serviceWorker' in navigator) {
         console.log('%cserviceWorker.js', logCss, 'found')
       }    
     })
-  }
+}
+
+let geoWatchID
+let geoToggle = document.querySelector('#geoToggle')
+let info = document.querySelector('#info')
+geoToggle.addEventListener('click', () => {
+    if(!geoWatchID) {
+        geoWatchID = navigator.geolocation.watchPosition(success, error, options)
+        alert('started tracking')
+    }
+    else {
+        navigator.geolocation.clearWatch(geoWatchID)
+        geoWatchID = null
+        alert('stoped tracking')
+    }
+})
+
+
+function success(position) {
+    info.textContent += position.coords.latitude + ", " + position.coords.longitude
+} 
+function error() {
+    alert('Sorry, no position available.')
+}
+const options = {
+    enableHighAccuracy: true,
+    maximumAge: 5000,
+    timeout: 10000
+}

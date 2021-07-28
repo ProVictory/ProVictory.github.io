@@ -20,3 +20,5 @@ self.addEventListener('fetch', async event => {
             resolve(caches.match(event.request))
     }))
 })
+
+
