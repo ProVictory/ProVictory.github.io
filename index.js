@@ -6,14 +6,14 @@ if ('serviceWorker' in navigator) {
       const regs = await navigator.serviceWorker.getRegistrations()
       if (regs.length == 0) {
         try {
-          const reg = await navigator.serviceWorker.register('sw.js')
-          console.log('%csw.js', logCss, 'registered')
+          const reg = await navigator.serviceWorker.register('serviceWorker.js')
+          console.log('%cserviceWorker.js', logCss, 'registered')
         } catch (err) {
           console.log('Service worker registration failed: ', err)
         }
       } else {
         regs.forEach(reg => reg.update())
-        console.log('%csw.js', logCss, 'found')
+        console.log('%cserviceWorker.js', logCss, 'found')
       }    
     })
   }
