@@ -1,3 +1,5 @@
-:root {
-    --color: #222222;
+canvas { 
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
 }
